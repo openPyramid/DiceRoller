@@ -9,6 +9,7 @@ import android.widget.Toast
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +20,10 @@ class MainActivity : AppCompatActivity() {
             // Toast.makeText(this, "button clicked", Toast.LENGTH_LONG).show()
             rollDice()
         }
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
-        val diceImage: ImageView = findViewById(R.id.dice_image)
         val randomInt = java.util.Random().nextInt(5) + 1
 
         val drawableResource = when(randomInt) {
